@@ -46,8 +46,10 @@ pub fn new_prion() -> Prion {
 }
 
 impl Pathogen for Bacteria {
-    fn attack(&self) {
-        println!("Bacteria attack! Rolling... {}", self.roll());
+    fn attack(&self) -> u32 {
+        let roll = self.roll();
+        println!("Bacteria attack! Rolling... {}", roll);
+        return roll;
     }
     fn roll(&self) -> u32 {
         return rand::thread_rng().gen_range(1..self.d);
@@ -55,8 +57,10 @@ impl Pathogen for Bacteria {
 }
 
 impl Pathogen for Virus {
-    fn attack(&self) {
-        println!("Virus attack! Rolling... {}", self.roll());
+    fn attack(&self) -> u32 {
+        let roll = self.roll();
+        println!("Virus attack! Rolling... {}", roll);
+        return roll;
     }
     fn roll(&self) -> u32 {
         return rand::thread_rng().gen_range(1..self.d);
@@ -64,6 +68,6 @@ impl Pathogen for Virus {
 }
 
 pub trait Pathogen {
-    fn attack(&self);
+    fn attack(&self) -> u32;
     fn roll(&self) -> u32;
 }
