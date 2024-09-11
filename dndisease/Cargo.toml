@@ -11,3 +11,4 @@ path = "src/dndisease.rs"
 
 [dependencies]
 rand = "0.8.4"
+colored = "2"

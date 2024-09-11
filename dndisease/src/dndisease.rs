@@ -2,6 +2,8 @@ use std::thread;
 use pathogen::Pathogen;
 use pathogen::Bacteria;
 use enemy::Opponent;
+use colored::*;
+
 mod pathogen;
 mod enemy;
 
@@ -15,9 +17,9 @@ fn main() {
             let saving_roll = enemy.save();
 
             if attack_roll > saving_roll {
-                println!("Bacteria attack hits!");
+                println!("{}", "Bacteria attack hits!".blue());
             } else {
-                println!("Bacteria attack misses!");
+                println!("{}", "Bacteria attack misses!".red());
             }
         }
     });
