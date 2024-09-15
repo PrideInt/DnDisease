@@ -14,12 +14,12 @@ pub fn new_opponent(name: &str, d: u32) -> Opponent {
 
 impl Opponent {
     pub fn save(&self) -> u32 {
-        let roll = self.roll();
+        let roll: u32 = self.roll();
         println!("{} saving throw! Rolling... {}", self.name, roll);
         return roll;
     }
     pub fn attack(&self) -> u32 {
-        let roll = self.roll();
+        let roll: u32 = self.roll();
         println!("{} attack! Rolling... {}", self.name, roll);
         return roll;
     }

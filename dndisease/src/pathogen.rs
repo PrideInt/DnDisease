@@ -47,7 +47,7 @@ pub fn new_prion() -> Prion {
 
 impl Pathogen for Bacteria {
     fn attack(&self) -> u32 {
-        let roll = self.roll();
+        let roll: u32 = self.roll();
         println!("Bacteria attack! Rolling... {}", roll);
         return roll;
     }
@@ -58,7 +58,7 @@ impl Pathogen for Bacteria {
 
 impl Pathogen for Virus {
     fn attack(&self) -> u32 {
-        let roll = self.roll();
+        let roll: u32 = self.roll();
         println!("Virus attack! Rolling... {}", roll);
         return roll;
     }
