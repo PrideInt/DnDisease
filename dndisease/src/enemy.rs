@@ -3,12 +3,14 @@ use rand::Rng;
 pub struct Opponent {
     name: String,
     d: u32,
+    h: u32,
 }
 
-pub fn new_opponent(name: &str, d: u32) -> Opponent {
+pub fn new_opponent(name: &str, d: u32, h: u32) -> Opponent {
     return Opponent {
         name: name.to_string(),
-        d: d
+        d: d,
+        h: h
     }
 }
 
@@ -25,5 +27,9 @@ impl Opponent {
     }
     pub fn roll(&self) -> u32 {
         return rand::thread_rng().gen_range(1..self.d);
+    }
+
+    pub fn get_health(&self) -> u32 {
+        return self.h;
     }
 }
