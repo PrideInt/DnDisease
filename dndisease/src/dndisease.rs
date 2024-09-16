@@ -44,7 +44,7 @@ fn main() {
                 }
             }
             println!();
-            
+
             if input_read {
                 let enemy_attack_roll: u32 = enemy.attack();
                 let saving_roll: u32 = bacteria.save();
@@ -55,7 +55,7 @@ fn main() {
                     let damage: u32 = 4;
                     bacteria.take_damage(damage - bacteria.get_armor_class());
 
-                    if bacteria.get_armor_class() > 1 {
+                    if bacteria.get_armor_class() > bacteria.get_original_armor_class() {
                         bacteria.remove_guard();
                     }
                     println!("Bacteria health: {}", bacteria.get_health().to_string().yellow());

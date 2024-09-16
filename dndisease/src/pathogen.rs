@@ -1,15 +1,15 @@
 use rand::Rng;
 use colored::*;
 
-pub struct Bacteria { name: String, d: u32, h: u32, ac: u32 }
+pub struct Bacteria { name: String, d: u32, h: u32, ac: u32, oac: u32 }
 
-pub struct Virus { name: String, d: u32, h: u32, ac: u32 }
+pub struct Virus { name: String, d: u32, h: u32, ac: u32, oac: u32 }
 
-pub struct Fungi { name: String, d: u32, h: u32, ac: u32 }
+pub struct Fungi { name: String, d: u32, h: u32, ac: u32, oac: u32 }
 
-pub struct Protozoa { name: String, d: u32, h: u32, ac: u32 }
+pub struct Protozoa { name: String, d: u32, h: u32, ac: u32, oac: u32 }
 
-pub struct Prion { name: String, d: u32, h: u32, ac: u32 }
+pub struct Prion { name: String, d: u32, h: u32, ac: u32, oac: u32 }
 
 pub trait Pathogen {
     fn attack(&self) -> u32;
@@ -32,7 +32,8 @@ pub fn new_bacteria() -> Bacteria {
         name: "Bacteria".to_string(),
         d: 6,
         h: 10,
-        ac: 1
+        ac: 1,
+        oac: 1
     }
 }
 
@@ -44,7 +45,8 @@ pub fn new_virus() -> Virus {
         name: "Virus".to_string(),
         d: 10,
         h: 5,
-        ac: 0
+        ac: 0,
+        oac: 0
     }
 }
 
@@ -56,7 +58,8 @@ pub fn new_fungi() -> Fungi {
         name: "Fungi".to_string(),
         d: 8,
         h: 8,
-        ac: 2
+        ac: 2,
+        oac: 2
     }
 }
 
@@ -68,7 +71,8 @@ pub fn new_protozoa() -> Protozoa {
         name: "Protozoa".to_string(),
         d: 12,
         h: 15,
-        ac: 0
+        ac: 0,
+        oac: 0
     }
 }
 
@@ -80,7 +84,8 @@ pub fn new_prion() -> Prion {
         name: "Prion".to_string(),
         d: 20,
         h: 3,
-        ac: 3
+        ac: 3,
+        oac: 3
     }
 }
 
@@ -125,6 +130,9 @@ impl Pathogen for Bacteria {
     fn get_armor_class(&self) -> u32 {
         return self.ac;
     }
+    fn get_original_armor_class(&self) -> u32 {
+        return self.oac;
+    }
 }
 
 impl Pathogen for Virus {
@@ -167,5 +175,8 @@ impl Pathogen for Virus {
     }
     fn get_armor_class(&self) -> u32 {
         return self.ac;
+    }
+    fn get_original_armor_class(&self) -> u32 {
+        return self.oac;
     }
 }
