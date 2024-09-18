@@ -3,16 +3,21 @@ use std::io;
 use pathogen::Pathogen;
 use pathogen::Bacteria;
 use enemy::Opponent;
+use animation::TextAnimationBuilder;
 use colored::*;
 
 mod pathogen;
 mod enemy;
+mod animation;
 
 fn main() {
-    println!("{}", "Welcome to DnDisease!".cyan().bold());
-    println!("{}{}\n", "Commands: ".yellow(), "attack, guard".yellow().italic());
+    // Clear terminal prior to starting game
+    print!("{}[2J", 27 as char);
 
     let handler = thread::spawn(|| {
+        TextAnimationBuilder::animate("Welcome to DnDisease!".to_string(), 50, "cyan".to_string(), "bold".to_string());
+        println!("{}{}\n", "Commands: ".yellow(), "attack, guard".yellow().italic());
+
         let mut bacteria: Bacteria = pathogen::new_bacteria();
         let enemy: Opponent = enemy::new_opponent("United States", 20, 20);
 
