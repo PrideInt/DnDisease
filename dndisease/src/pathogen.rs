@@ -22,6 +22,7 @@ pub trait Pathogen {
     fn get_name(&self) -> String;
     fn get_health(&self) -> u32;
     fn get_armor_class(&self) -> u32;
+    fn get_original_armor_class(&self) -> u32;
 }
 
 /**

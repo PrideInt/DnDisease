@@ -1,4 +1,4 @@
-use std::thread;
+use std::{thread, time};
 use std::io;
 use pathogen::Pathogen;
 use pathogen::Bacteria;
@@ -18,6 +18,7 @@ fn main() {
 
         while bacteria.get_health() > 0 && enemy.get_health() > 0 {
             let mut input_read: bool = true;
+            // let curr_time = time::Instant::now();
 
             let mut input = String::new();
             io::stdin().read_line(&mut input).expect("Enter command again.");
@@ -34,9 +35,11 @@ fn main() {
                     } else {
                         println!("{}", "Bacteria attack misses!".red());
                     }
+                    thread::sleep(time::Duration::from_millis(1000));
                 },
                 "guard" => {
                     bacteria.guard();
+                    thread::sleep(time::Duration::from_millis(1000));
                 },
                 _ => {
                     println!("{}", "Invalid command.".red());
@@ -58,10 +61,13 @@ fn main() {
                     if bacteria.get_armor_class() > bacteria.get_original_armor_class() {
                         bacteria.remove_guard();
                     }
-                    println!("Bacteria health: {}", bacteria.get_health().to_string().yellow());
+                    println!();
                 } else {
                     println!("{}", "Enemy attack misses!".red());
+                    println!();
                 }
+                thread::sleep(time::Duration::from_millis(1000));
+                println!("Bacteria health: {}", bacteria.get_health().to_string().yellow());
             }
             println!();
         }
