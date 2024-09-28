@@ -3,6 +3,7 @@ Disease combat game (as the disease like Plague Inc.) with 5e DnD rules.
 
 > [!IMPORTANT]
 > ## IN DEVELOPMENT
+> [![Development](https://github.com/PrideInt/DnDisease/actions/workflows/rust.yml/badge.svg)](https://github.com/PrideInt/DnDisease/actions/workflows/rust.yml)
 
 ## Overview
 
