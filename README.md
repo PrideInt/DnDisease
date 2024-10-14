@@ -29,7 +29,7 @@ Run `cargo run --bin dndisease` in terminal to begin the game.
 
 Potential view of the game's map (when crossing over to other countries and nations) implemented by a graph.
 
-<img src="https://github.com/user-attachments/assets/a97c10e2-a02c-4a23-9008-a909f02861d4" width="75%">
+<img src="https://github.com/user-attachments/assets/6721466a-ca30-42a4-89d0-4422ea14fb66" width="75%">
 
 **Nodes** are defined by country. Each node represents a country/nation.
 
