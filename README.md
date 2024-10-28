@@ -24,3 +24,14 @@ your game ***completely fucking nauseating***.
 ## Initiation
 
 Run `cargo run --bin dndisease` in terminal to begin the game.
+
+## Map
+
+Potential view of the game's map (when crossing over to other countries and nations) implemented by a graph.
+
+<img src="https://github.com/user-attachments/assets/25dd187b-96da-48c0-be71-e67a43fa6ec9" width="75%">
+
+**Nodes** are defined by country. Each node represents a country/nation.
+
+**Edge weights** are defined by distance of player's current location. Can only move within one edge. Can only
+return to and from node 1 and node 2.
